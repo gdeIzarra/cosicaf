@@ -1,0 +1,21 @@
+#********ION DRIFT_VELOCITY *****************************
+#*-g. de Izarra, CEA Cadarache-------------------------------- 
+#* 
+#* The ion drift velocity are coming from the paper: 
+#* Approximation of the characteristics of Ion Drift in Parent Gas
+#* by R. I. Golyatina and S. A. Mairov
+#* Plasma Physics reports vol 42 n°1
+#* 
+#* The file contains coefficients depending of the temperature
+#* for the Frost semi-empirical formula which is:
+#*
+#* v=a(1+b*E/N)^{-0.5}*E/N with E/N in td and v in (cm/s)
+#*------------------------------------------------------------
+#*Ion	T(k) a(cm/(s.Td)) 1/b(Td) T a b ...  
+#*************************************************************
+He	4.2	5632	17	77	4162	33	300	2774	85	1000	1787	210	2000	1374	410
+Ne	4.2	1888	35	77	1605	45	300	1117	103	1000	771		240	2000	591		450
+Ar4N2 4.2	668		75	77	588		95	300	409		200	1000	280		480	2000	207		1030
+Ar	4.2	668		75	77	588		95	300	409		200	1000	280		480	2000	207		1030
+Kr	4.2	377		108	77	346		120	300	258		225	1000	176		520	2000	130		1080
+Xe	4.2	236		125	77	213		145	300	159		26	1000	101		720	2000	75		1450
