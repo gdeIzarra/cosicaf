@@ -104,7 +104,7 @@ DEFUN_DLD (mcV, args, nargout,
   }
     
     
-  octave_stdout << "Hello World has "
+  octave_stdout << "mcV has "
                 << nargin << " input arguments and "
                 << nargout << " output arguments.\n";
 

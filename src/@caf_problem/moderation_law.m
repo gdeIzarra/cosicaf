@@ -37,6 +37,9 @@ end
       end
     l=l/data(2);
     E=data(1)*(data(4)*(1-l)+data(5)*(1-l)^2.0+data(6)*(1-l)^3.0+data(7)*(1-l)^4+data(8)*(1-l)^5);
+    if(E>data(1))% prevent fit uncertainty to crash the code -> happen for example at dist=0 ->  lffU5 E=100.50003 
+    E=data(1);
+    end
   end
 
  end
