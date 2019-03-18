@@ -34,7 +34,7 @@
 
 
 
-\title{COSICAF muanual}
+\title{COSICAF manual}
 \author{Gregoire de Izarra}
 
 
@@ -235,7 +235,7 @@
 	  
 	
 	\section{Tutorial : access to the basic models}
-	The access to the first level of modeling is interesting to build a simulation from scratch. During practical work described in the paper XXXX, students are asked to build a simple Monte Carlo code relying on the basic COSICAF models.
+	The access to the first level of modeling is interesting to build a simulation from scratch. During practical work described in the paper {\it{}Modelling of fission chamber: simple approaches for a better understanding of nuclear instrumentation}, students are asked to build a simple Monte Carlo code relying on the basic COSICAF models.
 	
 	To use the low level models, it is necessary to define a \lstinline{caf_problem} object which contains all the method and the associated data for fission chamber simulation. Then, the data stored in .dat file located in the base directory of COSICAF must be loaded in memory:
 	
@@ -294,7 +294,7 @@
 	% in MeV and the approximation.
 	
 	\end{lstlisting}
-	Inverse moderation laws are useful for taking into account the energy already lost by the heavy ion during travel through different material.
+	Inverse moderation laws are used to take into account the energy already lost by the heavy ion during travel through different materials.
 	
    Other data like electron or ion drift velocities are available in COSICAF, they can be used in the following way: 
 	
@@ -339,7 +339,7 @@
    \end{itemize}
 	
 	
-	As for the access to the basic models, the loading of CASICAF data is done with the following script:
+	As for the access to the basic models, the loading of COSICAF data is done with the following script:
 	
 	\begin{lstlisting}
 		obj=caf_problem(); % caf_poblem defined
@@ -376,13 +376,13 @@
 	\end{lstlisting}
 	
 	If the geometry seems ok, the script can be further extended to set 
-	simulation parameters. Few parameters has to be set, first the number of heavy particles to simulate. Not all the particles lead to pulses, some are stopped before entering in gas volumes. If a specific number of pulses is needed, a coarse estimation of the number of heavy particles to simulate should be done. Another important parameter is the number of charged meta-particles to produce. For each fission tracks, the code will produced two time the number of meta-particles asked, half will be ions and half electrons. A value around few hundreds is recommended and should work on most of simulations. 
+	simulation parameters. Few parameters has to be set, first the number of heavy particles to simulate. Not all the particles lead to pulses, some are stopped before entering in gas volumes. If a specific number of pulses is needed, a coarse estimation of the number of heavy particles to simulate should be done. Another important parameter is the number of charged meta-particles to produce. For each fission tracks, the code will produce two times the number of meta-particles asked, half will be ions and half electrons. A value around few hundreds is recommended and should work on most of simulations. 
 	
 	\begin{lstlisting}
 	obj.particle_nb=5000;
-	%definition of the number of particle to simulate.
+	%definition of the number of particles to simulate.
 	% if the geometry is complicated increase this number.
-	% For statistic since not all the particles lead to current pulse.
+	% For statistics, since not all the particles lead to current pulse.
 	% The time needed to propagate heavy part is negligible
 	% in front of the time needed to compute pulses.
 	
@@ -400,7 +400,7 @@
 	
 	The electric field and the electrodes weighting field are included
 	 in the simulation with function handles. Functions must take as parameter a three elements vector representing the position where to compute the field and return the electric field as a vector.
-	 For each simulation, electric and weighting field function must be defined in a separated file. If potential computed by COSICAF are used, it is possible to encapsulate the routine \lstinline{compute_E_from_mc_V}.
+	 For each simulation, electric and weighting field functions must be defined in separate files. If potential computed by COSICAF are used, it is possible to encapsulate the routine \lstinline{compute_E_from_mc_V}.
 	 
 	 Here is an example of function defining electric field:
 	 
@@ -441,7 +441,7 @@
 	  %The handle on the CFUR_E routine is used.
 	  
 	  %weighting field for electrode are kept in memory
-	  % by using cell containing handle functions.
+	  % by using cells containing handle of function.
 	  
 	  %let us define a single electrode of interest, we have:
 	  obj.weighting_field=cell(1) % 1 cell is defined
@@ -449,9 +449,9 @@
 	  % in the cell
 	  \end{lstlisting}
 	  
-	  since heavy ion transport and charge track generation are uncoupled to signal computation, it is possible to change the time parameters, the electric field and the number of charged particles to generate at every moment.
+	  Since heavy ion transport and charge track generation are uncoupled to signal computation, it is possible to change the time parameters, the electric field and the number of charged particles to generate at every moment.
 	
-		Since every parameter of the simulation is defined, it is now possible to start the heavy ions generation and transport. This is done with:
+		Once every parameter of the simulation is defined, it is now possible to start the heavy ions generation and transport. This is done with:
 		
 		\begin{lstlisting}
 		obj.init_heavy_particles(); 
@@ -576,7 +576,7 @@
 	% For each defined value, a color is associated.
 	\end{lstlisting}       
 	
-	An example of discrete geometry is given in figure XX. Once the geometry is ready, the computation of the electric potential can start.
+	An example of discrete geometry is given in figure \ref{fig:voxel}. Once the geometry is ready, the computation of the electric potential can start.
 	 With Octave, two c++ function can be used, \lstinline{mcV} and \lstinline{mcVspecial}. The second function is a special version of the algorithm where the origin of random walk might be restricted to a small domain. The function call is as followed:
 	 
 	 \begin{lstlisting}
@@ -755,7 +755,8 @@
 		
 		
 	\section{Licence} 
-	
+		
+	COSICAF is distributed under the GPL3 licence. You have the right to modify the source code, use it as the condition you provide the source code. The latest version of the software is available on following git deposit: . Contributors are welcome, do not hesitate to propose commits on the git repository when you find a bug or if you have interesting features to add.
 	
 	
 \end{document}

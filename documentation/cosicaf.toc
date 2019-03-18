@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}What COSICAF does}{2}
+\contentsline {section}{\numberline {2}Installation}{2}
+\contentsline {section}{\numberline {3}Data used in cosicaf, and how to add additionnal models}{2}
+\contentsline {subsection}{\numberline {3.1}Moderation laws}{3}
+\contentsline {subsection}{\numberline {3.2}Electron drift velocity}{3}
+\contentsline {subsection}{\numberline {3.3}Ion drift velocity}{4}
+\contentsline {subsection}{\numberline {3.4}Mean energy needed to produce ion pair}{4}
+\contentsline {section}{\numberline {4}Geometry description}{5}
+\contentsline {section}{\numberline {5}Tutorial : access to the basic models}{5}
+\contentsline {section}{\numberline {6}Tutorial: typical organisation of a high level simulation}{7}
+\contentsline {section}{\numberline {7}Electrostatic computation}{10}
+\contentsline {subsection}{\numberline {7.1}Visualisation}{13}
+\contentsline {section}{\numberline {8}Function reference}{13}
+\contentsline {subsection}{\numberline {8.1}Data loading}{13}
+\contentsline {subsection}{\numberline {8.2}Basic models}{15}
+\contentsline {subsection}{\numberline {8.3}Geometry related}{15}
+\contentsline {subsection}{\numberline {8.4}Heavy ion propagation}{16}
+\contentsline {subsection}{\numberline {8.5}Signal generation}{17}
+\contentsline {subsection}{\numberline {8.6}Electrostatic}{17}
+\contentsline {section}{\numberline {9}Licence}{17}
