@@ -2,12 +2,10 @@ function draw_charged_particles(obj, sign)
   
   hold on;
   
-  init_dat=obj.particle{2,traj_ind};
+
+  dat=obj.charges( find(obj.charges(:,5)==sign),1:3)
   
-  traj_dat=obj.particle{3,traj_ind};
-  
-  
-  plot3([init_dat(5) traj_dat(end-4)], [init_dat(6) traj_dat(end-3)], [init_dat(7) traj_dat(end-2)],'r','linewidth',2);
+  plot3(dat(:,1), dat(:,2), dat(:,3),'r','linewidth',2);
   
   hold off;
   

@@ -38,7 +38,7 @@ if(isempty(ind))
 end
 %f(x)=a*(1-exp(b*(x-c)**d))
 
-  Ecorr=E*buff((ind-1)*7+4)*(1-exp(buff((ind-1)*7+5)*(Er-buff((ind-1)*7+6))^buff((ind-1)*7+7)))
+  Ecorr=E*buff((ind-1)*7+4)*(1-exp(buff((ind-1)*7+5)*(Er-buff((ind-1)*7+6))^buff((ind-1)*7+7)));
   if(isreal(Ecorr)==0)
   Ecorr=0;
   end
