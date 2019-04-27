@@ -137,9 +137,9 @@ R=range(obj,medium,mass_vol,particle);
 % compute the energy to spend in electronic collision 
 Ecorr=elecE_corr(obj,medium,particle,E);
 
-%
+% compute the drift velocity of electron and ion
 vel=e_drift_velocity(obj,medium,reducedE);
-
+v=ion_drift_velocity(obj,ion,T,reducedE);
 W=get_W_value(obj,material);
 
 

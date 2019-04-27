@@ -1,8 +1,8 @@
-function l=load_geometry(obj,filname);
-%%
-%
-%
-
+function ret=load_geometry(obj,filname);
+%% 
+% 24/04/2019:
+% *fix on the return value correction
+ret=0;
 obj.geometry=cell(0);
 
 fich=fopen(filname,'rb');
@@ -29,8 +29,7 @@ fich=fopen(filname,'rb');
 	obj.geometry{5,i}= [a{10},a{11}];
   obj.geometry{6,i}=a{13}{:};
   obj.geometry{7,i}=[a{12},a{14},a{15}];
-    %obj.e_drift_data{1,i}=medium;
-    %    obj.e_drift_data{2,i}=[fit,E0, E1,a,b,c,d];
+ 
     i=i+1;
    end
     
