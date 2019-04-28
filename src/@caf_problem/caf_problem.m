@@ -39,6 +39,18 @@ geometry_electrostat=[];
 %
 
 %--------------------------------
+%source definition. 
+%--------------------------------
+%added for COSICAF V2. 23/04/2019
+
+source=[];
+%source is a cell array which contains all the data about the
+% complex source like correlated ones.
+% Each line of this matrix contain:
+% source nb | particle_name | energy |total emission of the source
+
+
+%--------------------------------
 %particle definition.
 %--------------------------------
 
@@ -101,7 +113,7 @@ ion_drift_data=[];
 molar_mass=[];
 
 %--------------------------------
-% Data for townsend multiplication (to add)
+% Data for townsend ionisation coefficient (to add)
 %--------------------------------
 
 townsend_data=[];
@@ -121,6 +133,9 @@ ret=load_ion_drift_velocity(obj);
 
 ret=load_elecEcorr(obj);
 
+
+ret=load_townsend_i_coef(obj);
+
 %------------------------------------------------------
 % Low level methods for physics computation...
 %------------------------------------------------------
@@ -137,9 +152,11 @@ R=range(obj,medium,mass_vol,particle);
 % compute the energy to spend in electronic collision 
 Ecorr=elecE_corr(obj,medium,particle,E);
 
-% compute the drift velocity of electron and ion
+%Get the electron drift velocity in a specific medium
 vel=e_drift_velocity(obj,medium,reducedE);
+
 v=ion_drift_velocity(obj,ion,T,reducedE);
+
 W=get_W_value(obj,material);
 
 
@@ -150,6 +167,9 @@ ret=load_geometry(obj,filename);
 ret=load_geometry_electrostat_dat(obj,filename);
 ret=check_geometry(obj);
 draw_geometry(obj);
+
+%improvement Cosicaf V2 (24/04/2019)
+ret=load_improved_source(obj,filename);
 
 %------------------------------------------------------
 %methods to make computation in space

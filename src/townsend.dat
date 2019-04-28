@@ -1,0 +1,24 @@
+#********TOWNSEND'S IONISATION COEFFICIENT ********************
+#*-g. de Izarra, CEA Cadarache-------------------------------- 
+#* 
+#* Townsend ionisation coefficients are coming from the paper: 
+#* Townsend's ionization coefficients for neon, argon, krypton and xenon
+#* by A.A.Kruithof
+#* Physica 7 06/1940
+#* 
+#* The file contains coefficients for a fit which is: 
+#* 
+#*
+#* a(x)=(b*exp(-c*(x)**d))+e where x is the reduced electric 
+#* field in (Td) and a is the 100*alpha/E (1/V)
+#*------------------------------------------------------------
+#*gas	Threshold(Td) low limit(Td) high limit(Td) b c d e   
+#*************************************************************
+Ne	5.659	0	40	2.62053	24.8791	-0.797348	0.0312019
+Ne	5.659	40	80	1.01681	1530.95	-1.82674	0.567243
+Ar	14.147	0	50	2.36236	126.737	-1.0499	0.00506019
+Ar	14.147	50	400	2.26812	884.134	-1.44278	0.214054
+Kr	14.147	0	40	552.508	35.2178	-0.391269	0.00111443
+Kr	14.147	40	200	3.49295	106.007	-0.946643	0.000313895
+Xe	22.636	0	90	5.20658	129.673	-0.869002	0.0018408
+Xe	22.636	90	600	3.06176	525.462	-1.1991	0.112852
