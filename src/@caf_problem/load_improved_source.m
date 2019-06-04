@@ -7,7 +7,7 @@ ret=0;
 obj.source=cell(0);
 
 
-fich=fopen(filname,'rb');
+fich=fopen(filename,'rb');
    if(fich==0)
    return;
  end

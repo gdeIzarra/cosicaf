@@ -107,7 +107,7 @@ for i=selected_vol
   E=buffer((i-2)*6+1);
   end
  i
-  Ecorr=obj.elecE_corr(mat,particle,E);
+  Ecorr=E;%obj.elecE_corr(mat,particle,E);
   W=obj.get_W_value(mat)% finding the W related to the material
   total_dist=norm(pos1-pos2)%computing the norm of the current trajectory 
   travel_offset=obj.inverse_moderation_law(mat,vol_mass,particle,E, approx); %distance already taken into account
@@ -117,7 +117,7 @@ for i=selected_vol
       E
       Ecorr
       E1=obj.moderation_law(mat,vol_mass,particle,travel_offset+travel+dx,approx)
-      E1corr=obj.elecE_corr(mat,particle,E1)
+      E1corr=E1;%obj.elecE_corr(mat,particle,E1)
      
       charge(macro_charge_nb,1:3)=pos2+(vec.*(travel+dx*0.5))';
       charge(macro_charge_nb,4)=(Ecorr-E1corr)/(W*1e-6);

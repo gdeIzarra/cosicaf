@@ -155,9 +155,16 @@ Ecorr=elecE_corr(obj,medium,particle,E);
 %Get the electron drift velocity in a specific medium
 vel=e_drift_velocity(obj,medium,reducedE);
 
+% Get the ion drift velocity in a specific medium
 v=ion_drift_velocity(obj,ion,T,reducedE);
 
+%Get the W value related to the material the heavy ion go through
 W=get_W_value(obj,material);
+
+
+%Routine to get the first Townsend ionisation coefficient
+alpha=townsend_ionisation(obj,medium,E);
+
 
 
 %------------------------------------------------------

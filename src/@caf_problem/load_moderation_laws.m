@@ -2,7 +2,7 @@ function ret=load_moderation_laws(obj)
   ret=0;
   obj.moderation_laws=cell(0);
     
-  fich=fopen('moderation_law.dat','rb');
+  fich=fopen('moderation_lawV2.dat','rb');
    if(fich==0)
    return;
    end

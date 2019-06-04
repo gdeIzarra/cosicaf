@@ -74,8 +74,23 @@ direc=[ cos(ang1) .*sin(ang2) ; sin(ang1).*sin(ang2);  cos(ang2);zeros(5,obj.par
       end
     
     
-       obj.particle(2,:)=mat2cell(direc,8,ones(1,obj.particle_nb));
-ret=1;
+       obj.particle(2,:)=mat2cell(direc,8,ones(1,obj.particle_nb))
+
+       %V2: now gases sources are available.
+       % An extra step is required to check if the source is generated in volume inner volume or not
+       for i=1:obj.particle_nb
+       
+       buff=obj.particle{2,i}
+        if(  buff(8)~=obj.find_volume_by_location(buff(5:7)))
+          'aie'
+          buff(8)=obj.find_volume_by_location(buff(5:7));
+          buff(4)=0.001
+          obj.particle{2,i}=buff;
+        end     
+       end
+       
+       
+      ret=1;
 end
 
 
