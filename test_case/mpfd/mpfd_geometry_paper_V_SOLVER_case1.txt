@@ -1,0 +1,68 @@
+#********GEOMETRY_DEFINITION*******************************************************************************************
+#* g. de Izarra, CEA Cadarache 
+#**********************************************************************************************************************
+#* Header: 
+#* 
+#* This file works with a geometry definition file. 
+#* It define the quantities needed to generate a discrite mesh for
+#* solving the poisson equation.
+#* The order of the boundaries and the permitivity correspond to the order 
+#* where volume have been defined.
+#**********************************************************************************************************************
+#outerV InnerV upperV lowerV permittivity
+#**********************************************************************************************************************
+0	0	0	0	1
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+200  no  200  200  2000
+0  no  0  0  2000
+0  no  0  0  2000
+200  no  200  200  2000
+200  no  200  200  3000
+200  no  200  200  3000
+0  no  0  0  3000
+0  no  0  0  3000
+no  no  no  no  10
+no  no  no  no  10
+#definition of the alumina around the wires
+#in front of wires:
+no  no  no  no  10
+no  no  no  no  10
+#in front with diagonals
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+#filling space 1
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+#filling space 2
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+#filling space 3
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+#filling space 4
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+#filling space 5
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+#filling space 6
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
+no  no  no  no  10
