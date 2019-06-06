@@ -118,7 +118,11 @@ for i=selected_vol
       Ecorr
       E1=obj.moderation_law(mat,vol_mass,particle,travel_offset+travel+dx,approx)
       E1corr=obj.elecE_corr(mat,particle,E1)
-     
+      %06/06/19 correction to avoid producing really large amount of charges at the end of a trajectory.
+	  % when the ff stops
+	  if(E1<=0)
+        break;
+      end
       charge(macro_charge_nb,1:3)=pos2+(vec.*(travel+dx*0.5))';
       charge(macro_charge_nb,4)=(Ecorr-E1corr)/(W*1e-6);
       charge(macro_charge_nb,5)=+1;
