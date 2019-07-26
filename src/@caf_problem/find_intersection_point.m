@@ -214,6 +214,12 @@ end
 %selecting the closest intersection point.
 [m,ind]=min(sqrt(sum((intersec-pos)'.^2)));
 ind
+%modification to tackle problem with grazing trajectory 07/19
+if(m==0)
+intersec(ind,:)=[];
+[m,ind]=min(sqrt(sum((intersec-pos)'.^2)));
+end
+
 vec=intersec(ind,:);
 
 end
