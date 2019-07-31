@@ -72,6 +72,12 @@ function ret=move_charge_track(obj,signal_ind)
         %compute the drift velocity (module). 
         v=obj.ion_drift_velocity(material,300,obj.compute_reduced_Efield(norm(E),material,dens(1)));
         obj.charges(i,1:3)=obj.charges(i,1:3)+E/norm(E)*v*obj.time_step;
+		 
+		 vol=obj.find_volume_by_location(pos');%find the volum where the charge is
+         if(isempty(obj.get_W_value(material))) %if charge cannot drift in the material
+            obj.charges(i,5)=0; % we kill it
+          end 
+		
           for el=0:max(size(obj.weighting_field))-1% go through the electrode to evaluate induced signal    
             obj.signal(signal_ind(1)+el,signal_ind(2))=obj.signal(signal_ind(1)+el,signal_ind(2))+obj.charges(i,5)*obj.charges(i,4)*1.6e-19*dot(obj.charges(i,5)*E/norm(E)*v,obj.weighting_field{el+1}(obj.charges(i,1:3)));
           end
