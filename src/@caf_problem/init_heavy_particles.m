@@ -55,12 +55,12 @@ direc=[ cos(ang1) .*sin(ang2) ; sin(ang1).*sin(ang2);  cos(ang2);zeros(5,obj.par
             
             %compute the emission location of the particle
             buffer=obj.geometry{3,i};
-           
-              r=sqrt((rand(1,part_nb).*( buffer(1)-buffer(2))+buffer(2))./buffer(1));
+            %13 04 2020 bug correction on r -> thank you to reviewer 2
+              r=sqrt((rand(1,part_nb).*( buffer(1).^2-buffer(2).^2)+buffer(2).^2));
               angpos=2*pi*rand(1,part_nb);
        
-              direc(5,1+cnt:cnt+part_nb)=(r*buffer(1)).*sin(angpos)+buffer(4);
-              direc(6,1+cnt:cnt+part_nb)=(r*buffer(1)).*cos(angpos)+buffer(5);
+              direc(5,1+cnt:cnt+part_nb)=(r).*sin(angpos)+buffer(4);
+              direc(6,1+cnt:cnt+part_nb)=(r).*cos(angpos)+buffer(5);
               direc(7,1+cnt:cnt+part_nb)=buffer(3).*rand(1,part_nb)+buffer(6);
                
                
